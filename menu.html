@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menu — Little Saigon Restaurant, Winnipeg</title>
+<meta name="description" content="Full menu at Little Saigon Restaurant, 333 William Ave, Winnipeg: pho and Vietnamese noodle soups, fish sauce wings, bánh khọt, broken rice, vermicelli, vegetarian dishes and Saigon Grind specialty coffee. Call (204) 691-3999.">
+<link rel="canonical" href="https://little-saigon-winnipeg.vercel.app/menu.html">
+<meta name="theme-color" content="#1f3d2b">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Menu — Little Saigon Restaurant, Winnipeg">
+<meta property="og:description" content="Pho, fish sauce wings, bánh khọt, broken rice and specialty coffee in Winnipeg's Exchange District.">
+<meta property="og:image" content="https://little-saigon-winnipeg.vercel.app/assets/og.jpg">
+<meta property="og:url" content="https://little-saigon-winnipeg.vercel.app/menu.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/logo-512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script defer data-domain="little-saigon-winnipeg.vercel.app" src="https://plausible.io/js/script.js"></script>
+<style>
+:root{
+  --cream:#faf6ee; --cream-2:#f3ecdd; --forest:#1f3d2b; --forest-2:#2c5540;
+  --terra:#b9552f; --terra-dark:#9c4523; --charcoal:#23201c; --muted:#5c564c;
+  --line:#e2d8c4; --white:#fffdf8; --radius:16px; --shadow:0 10px 30px rgba(35,32,28,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Be Vietnam Pro",system-ui,sans-serif;background:var(--cream);color:var(--charcoal);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--forest)}
+:focus-visible{outline:3px solid var(--terra);outline-offset:2px;border-radius:4px}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--forest);color:#fff;padding:.75rem 1.25rem;z-index:200;border-radius:0 0 10px 0}
+.skip-link:focus{left:0}
+h1,h2,h3{font-family:"Fraunces",serif;font-weight:600;line-height:1.15;color:var(--forest)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 1.25rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.8rem 1.6rem;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid transparent;transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--terra);color:#fff}
+.btn-primary:hover{background:var(--terra-dark)}
+.btn-ghost{background:transparent;border-color:var(--forest);color:var(--forest)}
+.btn-ghost:hover{background:var(--forest);color:#fff}
+header.site{position:sticky;top:0;z-index:100;background:rgba(250,246,238,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.header-in{display:flex;align-items:center;gap:1rem;padding:.7rem 0}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--forest)}
+.brand img{width:44px;height:44px;border-radius:50%}
+.brand-name{font-family:"Fraunces",serif;font-weight:700;font-size:1.15rem;line-height:1.1}
+.brand-sub{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.header-cta{display:flex;gap:.6rem;margin-left:auto}
+.header-cta .btn{min-height:44px;padding:.55rem 1.2rem;font-size:.92rem}
+@media(max-width:640px){.header-cta .btn-ghost{display:none}}
+.menu-hero{padding:3.5rem 0 1.5rem;text-align:center}
+.menu-hero h1{font-size:clamp(2rem,5vw,3.2rem)}
+.menu-hero p{color:var(--muted);max-width:36rem;margin:.8rem auto 0}
+.cat-nav{position:sticky;top:69px;z-index:90;background:var(--cream);border-bottom:1px solid var(--line);padding:.7rem 0}
+.cat-nav-in{display:flex;gap:.5rem;overflow-x:auto;padding-bottom:.2rem;-webkit-overflow-scrolling:touch}
+.cat-btn{flex:0 0 auto;min-height:44px;padding:.55rem 1.1rem;border-radius:999px;border:2px solid var(--forest);background:transparent;color:var(--forest);font-weight:600;font-size:.92rem;cursor:pointer;font-family:inherit}
+.cat-btn[aria-pressed="true"]{background:var(--forest);color:#fff}
+.menu-cat{padding:2.8rem 0 1rem}
+.menu-cat h2{font-size:1.7rem;margin-bottom:1.2rem}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem}
+.item{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:1.2rem 1.3rem;box-shadow:var(--shadow)}
+.item-top{display:flex;justify-content:space-between;gap:1rem;align-items:baseline}
+.item h3{font-size:1.12rem}
+.item .vn{color:var(--muted);font-style:italic;font-size:.9rem}
+.item p{color:var(--muted);font-size:.94rem;margin-top:.35rem}
+.price{font-family:"Fraunces",serif;font-weight:700;color:var(--forest);white-space:nowrap}
+.price.placeholder{color:var(--terra-dark);font-size:.9rem;font-family:"Be Vietnam Pro",sans-serif;font-weight:700}
+.tags{margin-top:.5rem;display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.7rem;font-weight:700;letter-spacing:.06em;border:1px solid var(--forest);color:var(--forest);border-radius:999px;padding:.15rem .55rem}
+.tag.note{border-color:var(--terra-dark);color:var(--terra-dark)}
+.allergen{background:var(--cream-2);border:1px solid var(--line);border-radius:14px;padding:1.2rem 1.4rem;margin:2.5rem 0;color:var(--muted)}
+.order-cta{background:var(--forest);color:#fff;border-radius:var(--radius);padding:2rem;text-align:center;margin:2rem 0 3.5rem}
+.order-cta h2{color:#fff}
+.order-cta p{color:#e8dfc9;margin:.7rem auto 1.4rem;max-width:32rem}
+.order-cta .row{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center}
+footer.site{background:#171310;color:#cfc3a6;padding:2.5rem 0 7rem;font-size:.95rem}
+footer.site a{color:#f3ecdd}
+.mobile-bar{position:fixed;left:0;right:0;bottom:0;z-index:120;display:none;background:var(--white);border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(35,32,28,.12)}
+.mobile-bar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--forest)}
+.mobile-bar a.order{background:var(--terra);color:#fff}
+.mobile-bar a small{font-weight:500;font-size:.72rem;opacity:.85}
+@media(max-width:860px){.mobile-bar{display:flex}body{padding-bottom:60px}}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site">
+  <div class="wrap header-in">
+    <a class="brand" href="index.html" aria-label="Little Saigon Restaurant home">
+      <img src="assets/logo-512.png" alt="Little Saigon Restaurant logo" width="44" height="44">
+      <span><span class="brand-name">Little Saigon</span><br><span class="brand-sub">Restaurant · Winnipeg</span></span>
+    </a>
+    <div class="header-cta">
+      <!-- OWNER: replace #ORDERING-LINK with the real ordering URL -->
+      <a class="btn btn-primary" href="#ORDERING-LINK" data-track="Order click">Order online</a>
+      <a class="btn btn-ghost" href="tel:+12046913999" data-track="Call tap">Call (204) 691-3999</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap menu-hero">
+    <h1>Our Menu</h1>
+    <p>Vietnamese comfort food, made fresh in Winnipeg's Exchange District. Prices are set by the restaurant and may change — please call to confirm.</p>
+  </div>
+
+  <nav class="cat-nav" aria-label="Menu categories">
+    <div class="wrap cat-nav-in" id="catNav"></div>
+  </nav>
+
+  <div class="wrap" id="menuRoot"></div>
+
+  <div class="wrap">
+    <div class="allergen">
+      <strong style="color:var(--forest)">Allergies &amp; dietary needs:</strong> [ALLERGEN STATEMENT — owner to confirm wording]. Please tell us about any allergies when you order. [DIETARY INFO PER ITEM — V / VG / GF tags to be confirmed per dish]
+    </div>
+    <div class="order-cta">
+      <h2>Hungry?</h2>
+      <p>Order ahead for pickup, or come see us at 333 William Ave.</p>
+      <div class="row">
+        <!-- OWNER: replace #ORDERING-LINK with the real ordering URL -->
+        <a class="btn btn-primary" href="#ORDERING-LINK" data-track="Order click">Order online</a>
+        <a class="btn" style="background:var(--cream);color:var(--forest)" href="tel:+12046913999" data-track="Call tap">Call (204) 691-3999</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><strong style="color:#fff">Little Saigon Restaurant</strong> · 333 William Ave, Winnipeg, MB R3A 0H8 · <a href="tel:+12046913999" data-track="Call tap">(204) 691-3999</a> · <a href="https://www.instagram.com/littlesaigon.wpg/" target="_blank" rel="noopener">@littlesaigon.wpg</a></p>
+    <p style="margin-top:.5rem"><a href="index.html">Home</a> · <a href="index.html#visit">Hours &amp; location</a> · <a href="index.html#reviews">Reviews</a></p>
+  </div>
+</footer>
+
+<nav class="mobile-bar" aria-label="Quick actions">
+  <!-- OWNER: replace #ORDERING-LINK with the real ordering URL -->
+  <a class="order" href="#ORDERING-LINK" data-track="Order click">Order<small>online</small></a>
+  <a href="tel:+12046913999" data-track="Call tap">Call<small>(204) 691-3999</small></a>
+  <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Little+Saigon+Restaurant+333+William+Ave+Winnipeg+MB+R3A+0H8" target="_blank" rel="noopener" data-track="Directions click">Directions<small>333 William Ave</small></a>
+</nav>
+
+<script>
+/*
+  MENU DATA — single source of truth for this page.
+  Owner: edit names, descriptions and prices here only.
+  price: null  -> shows a [PRICE: ...] placeholder to fill in.
+  desc:  null  -> shows a [DESCRIPTION: ...] placeholder.
+  tags: only add "V", "VG" or "GF" where confirmed.
+*/
+var MENU = [
+  { id:"pho", title:"Pho & Vietnamese Noodle Soups", items:[
+    { name:"Deluxe Pho", vn:"Phở đặc biệt", desc:"Rare beef, brisket, tripe and beef meatballs served in a rich, aromatic Vietnamese broth.", price:17.95, tags:[] },
+    { name:"Spicy Beef Satay Pho", vn:null, desc:null, price:null, tags:[] },
+    { name:"Crab Noodle Soup", vn:null, desc:null, price:19.99, tags:[] }
+  ]},
+  { id:"specialty-soups", title:"Specialty Soups", items:[
+    { name:"Bún Bò Huế", vn:"Bún bò Huế", desc:null, price:null, tags:[] },
+    { name:"Bún Riêu", vn:"Bún riêu", desc:null, price:null, tags:[] }
+  ]},
+  { id:"appetizers", title:"Appetizers & Wings", items:[
+    { name:"Fish Sauce Glazed Wings", vn:null, desc:"Crispy chicken wings coated in a delicious sweet and savoury Vietnamese fish sauce glaze. Also try tamarind, sweet chili lime, salt & pepper or kung bao.", price:20.55, tags:[] },
+    { name:"Bánh Khọt", vn:"Bánh khọt", desc:"Savoury Vietnamese mini coconut pancakes topped with prawns, served with fresh herbs and dipping sauce.", price:null, tags:[] },
+    { name:"Vietnamese Beef Carpaccio", vn:"Bò tái chanh", desc:"Bright, herby and refreshing. Weekend only.", price:22.98, tags:["Weekend only"] },
+    { name:"Spring Rolls", vn:null, desc:null, price:12.10, tags:[] },
+    { name:"Shrimp & Pork Salad Rolls", vn:null, desc:null, price:13.30, tags:[] },
+    { name:"Bánh Bèo", vn:"Bánh bèo", desc:null, price:null, tags:[] },
+    { name:"Nem Nướng Ninh Hòa", vn:"Nem nướng Ninh Hòa", desc:null, price:null, tags:[] },
+    { name:"Bánh Xèo", vn:"Bánh xèo", desc:null, price:null, tags:[] }
+  ]},
+  { id:"noodles", title:"Vermicelli & Noodles", items:[
+    { name:"Woven Vermicelli Wraps", vn:null, desc:null, price:21.75, tags:[] }
+  ]},
+  { id:"rice", title:"Rice & Broken Rice", items:[
+    { name:"Deluxe Broken Rice", vn:null, desc:"Grilled pork chop, shredded pork skin, egg meat loaf and fried egg.", price:21.99, tags:[] },
+    { name:"Fried Rice with Roti Chicken", vn:"Cơm chiên gà rô ti", desc:"A hearty house favourite.", price:21.99, tags:[] }
+  ]},
+  { id:"vegetarian", title:"Vegetarian", items:[
+    { name:"Salt & Pepper Eggplant", vn:null, desc:null, price:19.99, tags:[] }
+  ]},
+  { id:"drinks", title:"Drinks & Saigon Grind", items:[
+    { name:"Vietnamese Iced Coffee", vn:"Cà phê sữa đá", desc:"The classic — strong, sweet and ice-cold.", price:7.99, tags:[] },
+    { name:"Salted Egg Yolk Coffee", vn:null, desc:null, price:null, tags:[] },
+    { name:"Black Sesame Latte", vn:null, desc:null, price:null, tags:[] },
+    { name:"Taro Drinks", vn:null, desc:null, price:null, tags:[] },
+    { name:"Egg Soda", vn:null, desc:null, price:null, tags:[] }
+  ]}
+];
+
+(function(){
+  var nav = document.getElementById("catNav");
+  var root = document.getElementById("menuRoot");
+
+  function money(p){ return "$" + p.toFixed(2); }
+  function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;"); }
+
+  MENU.forEach(function(cat, i){
+    var btn = document.createElement("button");
+    btn.className = "cat-btn";
+    btn.type = "button";
+    btn.textContent = cat.title;
+    btn.setAttribute("aria-pressed", i === 0 ? "true" : "false");
+    btn.addEventListener("click", function(){
+      nav.querySelectorAll(".cat-btn").forEach(function(b){ b.setAttribute("aria-pressed","false"); });
+      btn.setAttribute("aria-pressed","true");
+      var el = document.getElementById("cat-" + cat.id);
+      if(el) el.scrollIntoView({behavior:"smooth", block:"start"});
+    });
+    nav.appendChild(btn);
+
+    var sec = document.createElement("section");
+    sec.className = "menu-cat";
+    sec.id = "cat-" + cat.id;
+    sec.setAttribute("aria-labelledby", "h-" + cat.id);
+    var html = "<h2 id='h-" + cat.id + "'>" + esc(cat.title) + "</h2><div class='menu-grid'>";
+    cat.items.forEach(function(it){
+      html += "<article class='item'><div class='item-top'><div><h3>" + esc(it.name) + "</h3>";
+      if(it.vn) html += "<p class='vn'>" + esc(it.vn) + "</p>";
+      html += "</div>";
+      if(it.price === null) html += "<span class='price placeholder'>[PRICE: " + esc(it.name) + "]</span>";
+      else html += "<span class='price'>" + money(it.price) + "</span>";
+      html += "</div>";
+      html += "<p>" + (it.desc ? esc(it.desc) : "[DESCRIPTION: " + esc(it.name) + "]") + "</p>";
+      if(it.tags && it.tags.length){
+        html += "<div class='tags'>";
+        it.tags.forEach(function(t){ html += "<span class='tag note'>" + esc(t) + "</span>"; });
+        html += "</div>";
+      }
+      html += "</article>";
+    });
+    html += "</div>";
+    sec.innerHTML = html;
+    root.appendChild(sec);
+  });
+
+  // Menu page view + click tracking (Plausible; no-op if blocked).
+  if(window.plausible) plausible("Menu page view");
+  document.querySelectorAll("[data-track]").forEach(function(el){
+    el.addEventListener("click", function(){
+      if(window.plausible) plausible(el.dataset.track);
+    });
+  });
+})();
+</script>
+</body>
+</html>

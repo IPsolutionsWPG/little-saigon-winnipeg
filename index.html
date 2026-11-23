@@ -1,255 +1,525 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-CA">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Little Saigon Restaurant — Vietnamese Food in Winnipeg’s Exchange District</title>
-<meta name="description" content="Little Saigon Restaurant at 333 William Ave, Winnipeg. Family-run Vietnamese eatery known for pho, fish sauce wings, bánh khọt, broken rice and Saigon Grind coffee. Call (204) 691-3999.">
+<title>Little Saigon Restaurant — Vietnamese Food in Winnipeg's Exchange District</title>
+<meta name="description" content="Family-run Vietnamese restaurant at 333 William Ave, Winnipeg. Aromatic pho, fish sauce glazed wings, bánh khọt, broken rice and Saigon Grind specialty coffee. Dine-in and takeout. Call (204) 691-3999.">
 <link rel="canonical" href="https://little-saigon-winnipeg.vercel.app/">
-<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#1f3d2b">
 <meta property="og:type" content="restaurant">
-<meta property="og:title" content="Little Saigon Restaurant — Winnipeg">
-<meta property="og:description" content="Pho, crispy wings, bánh khọt and Vietnamese coffee in Winnipeg’s Exchange District. 333 William Ave · (204) 691-3999">
+<meta property="og:title" content="Little Saigon Restaurant — Vietnamese Food in Winnipeg's Exchange District">
+<meta property="og:description" content="A taste of Vietnam, right here in Winnipeg. Pho, fish sauce wings, bánh khọt, broken rice and specialty coffee at 333 William Ave.">
 <meta property="og:image" content="https://little-saigon-winnipeg.vercel.app/assets/og.jpg">
 <meta property="og:url" content="https://little-saigon-winnipeg.vercel.app/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#1d1710">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/logo-512.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Analytics: Plausible (privacy-friendly). Owner: claim the domain at plausible.io or replace data-domain. -->
+<script defer data-domain="little-saigon-winnipeg.vercel.app" src="https://plausible.io/js/script.js"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Restaurant","name":"Little Saigon Restaurant","servesCuisine":"Vietnamese","telephone":"+1-204-691-3999","address":{"@type":"PostalAddress","streetAddress":"333 William Ave","addressLocality":"Winnipeg","addressRegion":"MB","postalCode":"R3A 0H8","addressCountry":"CA"},"geo":{"@type":"GeoCoordinates","latitude":49.90018,"longitude":-97.142857},"url":"https://little-saigon-winnipeg.vercel.app/","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"11:00","closes":"21:00"}]}
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Little Saigon Restaurant",
+  "url": "https://little-saigon-winnipeg.vercel.app/",
+  "menu": "https://little-saigon-winnipeg.vercel.app/menu.html",
+  "telephone": "+1-204-691-3999",
+  "servesCuisine": "Vietnamese",
+  "priceRange": "$$",
+  "acceptsReservations": "False",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "333 William Ave",
+    "addressLocality": "Winnipeg",
+    "addressRegion": "MB",
+    "postalCode": "R3A 0H8",
+    "addressCountry": "CA"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 49.90018, "longitude": -97.142857 },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "11:00", "closes": "21:00" }
+  ],
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "350" },
+  "sameAs": ["https://www.instagram.com/littlesaigon.wpg/"]
+}
 </script>
 <style>
-:root{--ink:#1d1710;--cream:#fff7ea;--paper:#fdf3e3;--red:#b3271e;--red2:#8f1d16;--gold:#e9a13b;--jade:#2f6b4f;--muted:#6b5d4f;--line:#e8d9c3}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Be Vietnam Pro",system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
-h1,h2,h3{font-family:Fraunces,serif;line-height:1.05;margin:0}
-a{color:inherit}img{max-width:100%;display:block}
-.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
-.topbar{position:sticky;top:0;z-index:50;background:rgba(29,23,16,.92);backdrop-filter:blur(10px);color:#fff}
-.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:10px;padding-bottom:10px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:Fraunces,serif;font-weight:800;font-size:1.15rem}
-.brand img{width:40px;height:40px;border-radius:10px}
-.nav{display:flex;gap:18px;font-size:.92rem}
-.nav a{text-decoration:none;opacity:.9}.nav a:hover{opacity:1;text-decoration:underline}
-.callbtn{background:var(--gold);color:#1d1710!important;font-weight:700;padding:9px 16px;border-radius:999px;text-decoration:none!important;white-space:nowrap}
-.hero{position:relative;min-height:92svh;display:flex;align-items:flex-end;overflow:hidden;background:#120d08;color:#fff}
-.hero-media{position:absolute;inset:-12% 0;will-change:transform}
-.hero-media video{width:100%;height:100%;object-fit:cover}
-.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,6,3,.25),rgba(10,6,3,.15) 40%,rgba(10,6,3,.82));will-change:transform}
-.hero-grain{position:absolute;inset:0;opacity:.18;background:radial-gradient(600px 300px at 20% 20%,rgba(233,161,59,.5),transparent 60%);will-change:transform}
-.hero-inner{position:relative;z-index:2;padding:120px 0 56px;width:100%}
-.eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:.78rem;font-weight:700;color:var(--gold)}
-.hero h1{font-size:clamp(2.6rem,7vw,5.2rem);max-width:12ch;margin:.15em 0}
-.hero p.lede{font-size:clamp(1.05rem,2.4vw,1.35rem);max-width:38rem;color:#ffeeda}
-.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
-.btn{display:inline-block;padding:13px 22px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent}
-.btn-gold{background:var(--gold);color:#1d1710}.btn-ghost{border-color:#fff;color:#fff;background:rgba(255,255,255,.08)}
-.hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;font-size:.92rem}
-.pill{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:6px 12px;border-radius:999px}
-#openStatus{font-weight:700}
-.strip{background:var(--red);color:#fff;overflow:hidden;white-space:nowrap;padding:10px 0;font-weight:700;letter-spacing:.06em}
-.strip span{display:inline-block;padding-right:48px;animation:slide 22s linear infinite}
-@keyframes slide{to{transform:translateX(-50%)}}
-section{padding:72px 0}
-.sec-head{max-width:44rem;margin-bottom:28px}
-.sec-head h2{font-size:clamp(1.9rem,4vw,2.8rem);margin:.2em 0}
-.sec-head p{color:var(--muted)}
-.grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
-.photo{border-radius:22px;overflow:hidden;box-shadow:0 18px 40px rgba(29,23,16,.18)}
-.photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden}
-.card img{aspect-ratio:16/10;object-fit:cover;width:100%}
-.card .pad{padding:18px}.card h3{font-size:1.25rem;margin-bottom:6px}
-.tag{display:inline-block;background:#fbe9c9;color:#7a4a00;font-size:.78rem;font-weight:700;padding:3px 9px;border-radius:999px;margin-bottom:8px}
-.menu{background:var(--ink);color:var(--cream)}
-.menu .sec-head p{color:#d8c9ae}
-.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px 48px}
-.menu h3{color:var(--gold);font-size:1.4rem;margin-bottom:12px}
-.item{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px dashed rgba(255,247,234,.22)}
-.item small{display:block;color:#d8c9ae;font-weight:400}
-.price{font-weight:700;color:var(--gold);white-space:nowrap}
-.note{font-size:.9rem;color:#d8c9ae;margin-top:18px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.review{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px}
-.review blockquote{margin:0 0 12px;font-size:1.05rem}
-.review figcaption{color:var(--muted);font-size:.9rem}
-.stars{color:var(--gold);letter-spacing:2px}
-.visit{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-.info{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px}
-.hours{list-style:none;margin:0;padding:0}
-.hours li{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid #f0e4cf}
-.hours li.today{font-weight:700;color:var(--red2)}
-.map{border-radius:20px;overflow:hidden;border:1px solid var(--line);min-height:320px}
-.map iframe{width:100%;height:100%;min-height:320px;border:0}
-footer{background:#120d08;color:#ffeeda;padding:48px 0 110px}
-footer a{color:var(--gold)}
-.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px}
-.mobilebar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;grid-template-columns:1fr 1fr;background:#120d08}
-.mobilebar a{padding:15px;text-align:center;color:#fff;text-decoration:none;font-weight:700}
-.mobilebar a:first-child{background:var(--red)}
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
-.reveal.in{opacity:1;transform:none}
-@media (max-width:820px){.grid2,.visit,.menu-grid{grid-template-columns:1fr}.cards,.reviews{grid-template-columns:1fr}.nav{display:none}.mobilebar{display:grid}.hero{min-height:88svh}section{padding:52px 0}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.strip span{animation:none}.reveal{opacity:1;transform:none;transition:none}}
+:root{
+  --cream:#faf6ee; --cream-2:#f3ecdd; --forest:#1f3d2b; --forest-2:#2c5540;
+  --terra:#b9552f; --terra-dark:#9c4523; --charcoal:#23201c; --muted:#5c564c;
+  --wood:#8a6b4f; --line:#e2d8c4; --white:#fffdf8;
+  --radius:16px; --shadow:0 10px 30px rgba(35,32,28,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Be Vietnam Pro",system-ui,sans-serif;background:var(--cream);color:var(--charcoal);line-height:1.6;-webkit-font-smoothing:antialiased}
+img,video{max-width:100%;display:block}
+a{color:var(--forest)}
+:focus-visible{outline:3px solid var(--terra);outline-offset:2px;border-radius:4px}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--forest);color:#fff;padding:.75rem 1.25rem;z-index:200;border-radius:0 0 10px 0}
+.skip-link:focus{left:0}
+h1,h2,h3,.serif{font-family:"Fraunces",serif;font-weight:600;line-height:1.15;color:var(--forest)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 1.25rem}
+section{padding:4.5rem 0}
+.eyebrow{letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;font-weight:700;color:var(--terra-dark);margin-bottom:.6rem}
+.lede{color:var(--muted);max-width:42rem;margin-top:.75rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;padding:.8rem 1.6rem;border-radius:999px;font-weight:600;font-size:1rem;text-decoration:none;border:2px solid transparent;transition:transform .15s ease,background .15s ease;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--terra);color:#fff}
+.btn-primary:hover{background:var(--terra-dark)}
+.btn-forest{background:var(--forest);color:#fff}
+.btn-forest:hover{background:var(--forest-2)}
+.btn-ghost{background:transparent;border-color:var(--forest);color:var(--forest)}
+.btn-ghost:hover{background:var(--forest);color:#fff}
+.btn-light{background:var(--cream);color:var(--forest)}
+.btn-outline-light{background:transparent;border-color:rgba(255,255,255,.85);color:#fff}
+/* Header */
+header.site{position:sticky;top:0;z-index:100;background:rgba(250,246,238,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.header-in{display:flex;align-items:center;gap:1rem;padding:.7rem 0}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--forest)}
+.brand img{width:44px;height:44px;border-radius:50%}
+.brand-name{font-family:"Fraunces",serif;font-weight:700;font-size:1.15rem;line-height:1.1}
+.brand-sub{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+nav.main{margin-left:auto;display:flex;gap:1.4rem;align-items:center}
+nav.main a{color:var(--charcoal);text-decoration:none;font-weight:500;font-size:.95rem;padding:.5rem 0}
+nav.main a:hover{color:var(--terra-dark)}
+.header-cta{display:flex;gap:.6rem;margin-left:1rem}
+.header-cta .btn{min-height:44px;padding:.55rem 1.2rem;font-size:.92rem}
+@media(max-width:860px){nav.main{display:none}.header-cta{margin-left:auto}.header-cta .btn-ghost{display:none}}
+/* Hero */
+.hero{position:relative;min-height:88svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#14100c}
+.hero-media{position:absolute;inset:0}
+.hero-media video,.hero-media img{width:100%;height:112%;object-fit:cover;will-change:transform}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,12,.35) 0%,rgba(20,16,12,.15) 40%,rgba(20,16,12,.82) 100%)}
+.hero-in{position:relative;z-index:2;padding:6rem 0 4rem;width:100%}
+.hero h1{color:#fff;font-size:clamp(2.2rem,6vw,4rem);max-width:16ch}
+.hero p.sub{margin-top:1rem;font-size:clamp(1rem,2.2vw,1.2rem);max-width:38rem;color:#f5efe2}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem}
+.hero-meta{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.6rem}
+.chip{background:rgba(250,246,238,.14);border:1px solid rgba(255,255,255,.35);color:#fff;padding:.45rem .9rem;border-radius:999px;font-size:.88rem;backdrop-filter:blur(4px)}
+.chip strong{color:#ffd9a8}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.hero-media video{display:none}}
+/* Promo banner */
+.promo{background:var(--forest);color:var(--cream);padding:1.4rem 0}
+.promo-in{display:flex;flex-wrap:wrap;align-items:center;gap:1rem;justify-content:space-between}
+.promo h2{color:#fff;font-size:1.5rem}
+.promo p{color:#e8dfc9;max-width:36rem}
+.promo .note{font-size:.85rem;color:#cfc3a6}
+/* Signature dishes */
+.dish-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.6rem;margin-top:2.2rem}
+.dish{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.dish img{height:230px;width:100%;object-fit:cover}
+.dish-body{padding:1.3rem 1.4rem 1.5rem;display:flex;flex-direction:column;gap:.4rem;flex:1}
+.dish-tag{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-dark)}
+.dish h3{font-size:1.35rem}
+.dish .vn{color:var(--muted);font-style:italic;font-size:.95rem}
+.dish p{color:var(--muted);font-size:.97rem;flex:1}
+.dish-price{font-family:"Fraunces",serif;font-weight:700;font-size:1.25rem;color:var(--forest)}
+/* Story */
+.story{background:var(--cream-2)}
+.story-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:2.5rem;align-items:center;margin-top:1rem}
+.story img{border-radius:var(--radius);box-shadow:var(--shadow)}
+@media(max-width:860px){.story-grid{grid-template-columns:1fr}}
+/* Saigon Grind */
+.grind{background:#241a12;color:#f3ecdd}
+.grind h2{color:#fff}
+.grind .lede{color:#d8cdb4}
+.grind-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;margin-top:2rem}
+.grind-card{background:rgba(250,246,238,.06);border:1px solid rgba(250,246,238,.18);border-radius:14px;padding:1.2rem}
+.grind-card h3{color:#ffd9a8;font-size:1.1rem;margin-bottom:.3rem}
+.grind-card p{font-size:.92rem;color:#e5dbc4}
+.grind img.hero-img{border-radius:var(--radius);margin-top:2rem;height:320px;width:100%;object-fit:cover}
+/* Reviews */
+.review-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.4rem;margin-top:2rem}
+.review{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem;box-shadow:var(--shadow)}
+.stars{color:#d98a1f;letter-spacing:.2em;font-size:1.05rem}
+.review blockquote{margin:.7rem 0;color:var(--charcoal)}
+.review figcaption{color:var(--muted);font-size:.9rem;font-weight:600}
+.rating-line{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;margin-top:1rem}
+.rating-badge{background:var(--forest);color:#fff;border-radius:999px;padding:.5rem 1.1rem;font-weight:700}
+/* Gallery */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin-top:2rem}
+.gallery-grid img{height:220px;width:100%;object-fit:cover;border-radius:14px}
+/* Visit */
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:2rem}
+@media(max-width:860px){.visit-grid{grid-template-columns:1fr}}
+.hours{list-style:none;margin-top:1rem}
+.hours li{display:flex;justify-content:space-between;padding:.45rem 0;border-bottom:1px dashed var(--line);max-width:24rem}
+.hours li.today{font-weight:700;color:var(--forest)}
+.map-frame{width:100%;height:340px;border:0;border-radius:var(--radius);box-shadow:var(--shadow)}
+.visit-actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.4rem}
+.visit-facts{margin-top:1.4rem;color:var(--muted)}
+.visit-facts li{margin:.3rem 0 .3rem 1.1rem}
+/* Final CTA */
+.final-cta{background:var(--forest);color:#fff;text-align:center}
+.final-cta h2{color:#fff;font-size:clamp(1.9rem,4.5vw,2.8rem)}
+.final-cta p{color:#e8dfc9;margin:1rem auto 1.8rem;max-width:34rem}
+.final-cta .hero-ctas{justify-content:center}
+/* Footer */
+footer.site{background:#171310;color:#cfc3a6;padding:3rem 0 7rem;font-size:.95rem}
+footer.site a{color:#f3ecdd}
+.footer-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between}
+footer .brand-name{color:#fff}
+/* Sticky mobile bar */
+.mobile-bar{position:fixed;left:0;right:0;bottom:0;z-index:120;display:none;background:var(--white);border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(35,32,28,.12)}
+.mobile-bar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--forest)}
+.mobile-bar a.order{background:var(--terra);color:#fff}
+.mobile-bar a small{font-weight:500;font-size:.72rem;opacity:.85}
+@media(max-width:860px){.mobile-bar{display:flex}body{padding-bottom:60px}}
 </style>
 </head>
 <body>
-<header class="topbar"><div class="wrap">
-<a class="brand" href="#top"><img src="assets/logo-512.png" alt="Little Saigon logo" width="40" height="40"> Little Saigon</a>
-<nav class="nav" aria-label="Main"><a href="#about">About</a><a href="#favourites">Favourites</a><a href="#menu">Menu</a><a href="#reviews">Reviews</a><a href="#visit">Visit</a></nav>
-<a class="callbtn" href="tel:+12046913999">Call (204) 691-3999</a>
-</div></header>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site">
+  <div class="wrap header-in">
+    <a class="brand" href="#top" aria-label="Little Saigon Restaurant home">
+      <img src="assets/logo-512.png" alt="Little Saigon Restaurant logo" width="44" height="44">
+      <span><span class="brand-name">Little Saigon</span><br><span class="brand-sub">Restaurant · Winnipeg</span></span>
+    </a>
+    <nav class="main" aria-label="Main navigation">
+      <a href="#favourites">Signature Dishes</a>
+      <a href="menu.html">Menu</a>
+      <a href="#about">Our Story</a>
+      <a href="#saigon-grind">Saigon Grind</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <div class="header-cta">
+      <!-- OWNER: replace #ORDERING-LINK with the real ordering URL -->
+      <a class="btn btn-primary" href="#ORDERING-LINK" data-track="Order click">Order online</a>
+      <a class="btn btn-ghost" href="tel:+12046913999" data-track="Call tap">Call (204) 691-3999</a>
+    </div>
+  </div>
+</header>
 
-<main id="top">
-<div class="hero" id="hero">
-<div class="hero-media" data-parallax="0.18"><video autoplay muted loop playsinline preload="metadata" poster="assets/poster.jpg" aria-label="Steaming pho, crispy wings and Vietnamese iced coffee at Little Saigon"><source src="assets/hero-web.mp4" type="video/mp4"></video></div>
-<div class="hero-shade" data-parallax="0.08"></div>
-<div class="hero-grain" data-parallax="-0.06"></div>
-<div class="hero-inner"><div class="wrap">
-<p class="eyebrow">Exchange District · Winnipeg</p>
-<h1>In the mood for pho?</h1>
-<p class="lede">Family-run Vietnamese cooking on William Avenue — aromatic pho, crispy fish sauce wings, bánh khọt and broken rice, with Saigon Grind coffee right next door.</p>
-<div class="hero-ctas"><a class="btn btn-gold" href="tel:+12046913999">Call to order</a><a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=Little+Saigon+Restaurant+333+William+Ave+Winnipeg+MB+R3A+0H8" target="_blank" rel="noopener">Get directions</a></div>
-<div class="hero-meta"><span class="pill" id="openStatus">Open today 11am–9pm</span><span class="pill">333 William Ave</span><span class="pill">Dine-in · Takeout</span><span class="pill">Vegetarian options</span></div>
-</div></div>
+<main id="main">
+<!-- HERO -->
+<section class="hero" id="top" aria-label="Welcome to Little Saigon Restaurant">
+  <div class="hero-media">
+    <img src="assets/poster.jpg" alt="Steaming pho, crispy wings and Vietnamese iced coffee at Little Saigon" fetchpriority="high">
+    <video id="heroVideo" autoplay muted loop playsinline poster="assets/poster.jpg" aria-label="Cinematic video of steaming pho, glazed wings and Vietnamese iced coffee">
+      <source src="assets/hero-web.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-shade"></div>
+  <div class="wrap hero-in">
+    <p class="eyebrow" style="color:#ffd9a8">Exchange District · Winnipeg</p>
+    <h1>A Taste of Vietnam, Right Here in Winnipeg.</h1>
+    <p class="sub">Discover authentic Vietnamese comfort food — steaming bowls of pho, crispy fish sauce wings and specialty coffee. Family-run and proudly serving Winnipeg's Exchange District.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="menu.html">Explore Our Menu</a>
+      <!-- OWNER: replace #ORDERING-LINK with the real ordering URL -->
+      <a class="btn btn-light" href="#ORDERING-LINK" data-track="Order click">Order Online</a>
+      <a class="btn btn-outline-light" href="https://www.google.com/maps/dir/?api=1&amp;destination=Little+Saigon+Restaurant+333+William+Ave+Winnipeg+MB+R3A+0H8" target="_blank" rel="noopener" data-track="Directions click">Get Directions</a>
+    </div>
+    <div class="hero-meta">
+      <span class="chip" id="openBadge"><strong>Hours</strong> · Mon, Wed–Sun 11am–9pm</span>
+      <span class="chip">333 William Ave</span>
+      <span class="chip">Dine-in · Takeout</span>
+      <span class="chip">Vegetarian options</span>
+    </div>
+  </div>
+</section>
+
+<!-- THURSDAY WING NIGHT PROMO -->
+<div class="promo" role="region" aria-label="Thursday Wing Night promotion">
+  <div class="wrap promo-in">
+    <div>
+      <h2>Thursday Wing Night</h2>
+      <p>Wings for <strong>$11.99</strong> with a specialty drink. [WING NIGHT DETAILS: which wings, which drinks, dine-in or takeout, any restrictions]</p>
+      <p class="note">Every Thursday. [CONFIRM: price and offer still current]</p>
+    </div>
+    <a class="btn btn-light" href="tel:+12046913999" data-track="Call tap">Call to order</a>
+  </div>
 </div>
 
-<div class="strip" aria-hidden="true"><span>PHỞ · BÚN BÒ HUẾ · FISH SAUCE WINGS · BÁNH KHỌT · BROKEN RICE · VIETNAMESE ICED COFFEE ·&nbsp;</span><span>PHỞ · BÚN BÒ HUẾ · FISH SAUCE WINGS · BÁNH KHỌT · BROKEN RICE · VIETNAMESE ICED COFFEE ·&nbsp;</span></div>
+<!-- SIGNATURE DISHES -->
+<section id="favourites" aria-labelledby="favourites-h">
+  <div class="wrap">
+    <p class="eyebrow">Signature dishes</p>
+    <h2 id="favourites-h" style="font-size:clamp(1.9rem,4vw,2.6rem)">Made to Be Remembered.</h2>
+    <p class="lede">From comforting bowls of pho to crispy Vietnamese specialties, discover some of the dishes that keep our guests coming back.</p>
+    <div class="dish-grid">
+      <article class="dish">
+        <img src="assets/poster.jpg" alt="Steaming deluxe pho with beef, herbs, bean sprouts and lime" loading="lazy">
+        <div class="dish-body">
+          <span class="dish-tag">Signature dish</span>
+          <h3>Deluxe Pho</h3>
+          <p class="vn">Phở đặc biệt</p>
+          <p>Rare beef, brisket, tripe and beef meatballs served in a rich, aromatic Vietnamese broth.</p>
+          <span class="dish-price">$17.95</span>
+        </div>
+      </article>
+      <article class="dish">
+        <img src="assets/wings.webp" alt="Crispy fish sauce glazed chicken wings with cilantro" loading="lazy">
+        <div class="dish-body">
+          <span class="dish-tag">House favourite</span>
+          <h3>Fish Sauce Glazed Wings</h3>
+          <p>Crispy chicken wings coated in a delicious sweet and savoury Vietnamese fish sauce glaze. Also try tamarind, sweet chili lime, salt &amp; pepper or kung bao.</p>
+          <span class="dish-price">$20.55</span>
+        </div>
+      </article>
+      <article class="dish">
+        <img src="assets/banh-khot.webp" alt="Bánh khọt prawn coconut pancakes with fresh herbs and dipping sauce" loading="lazy">
+        <div class="dish-body">
+          <span class="dish-tag">House specialty</span>
+          <h3>Bánh Khọt</h3>
+          <p>Savoury Vietnamese mini coconut pancakes topped with prawns, served with fresh herbs and dipping sauce — crisp edges, soft centres, made for dipping.</p>
+          <span class="dish-price">[PRICE: Bánh Khọt]</span>
+        </div>
+      </article>
+      <article class="dish">
+        <div class="dish-body">
+          <span class="dish-tag">Weekend only</span>
+          <h3>Vietnamese Beef Carpaccio</h3>
+          <p class="vn">Bò tái chanh</p>
+          <p>Bright, herby and refreshing. Guests call it a must-try.</p>
+          <span class="dish-price">$22.98</span>
+        </div>
+      </article>
+      <article class="dish">
+        <div class="dish-body">
+          <span class="dish-tag">House favourite</span>
+          <h3>Fried Rice with Roti Chicken</h3>
+          <p class="vn">Cơm chiên gà rô ti</p>
+          <p>A hearty house favourite.</p>
+          <span class="dish-price">$21.99</span>
+        </div>
+      </article>
+      <article class="dish">
+        <div class="dish-body">
+          <span class="dish-tag">Comfort plate</span>
+          <h3>Deluxe Broken Rice</h3>
+          <p>Grilled pork chop, shredded pork skin, egg meat loaf and fried egg.</p>
+          <span class="dish-price">$21.99</span>
+        </div>
+      </article>
+    </div>
+    <p style="margin-top:2rem"><a class="btn btn-forest" href="menu.html">See the full menu</a></p>
+  </div>
+</section>
 
-<section id="about"><div class="wrap grid2">
-<div class="reveal"><p class="eyebrow" style="color:var(--red)">About</p><h2 style="font-size:clamp(1.9rem,4vw,2.8rem)">A family-run table in the Exchange</h2>
-<p>Little Saigon Restaurant is a family-run Vietnamese eatery in Winnipeg’s Exchange District, known for pho, crispy chicken wings and regional specialties — plus an attached specialty coffee counter, Saigon Grind.</p>
-<p>The room is casual and family-friendly, with generous portions, plenty of fresh herbs at the table, and a substantial selection of vegetarian and vegan options. Come for a steaming bowl, stay for an iced coffee.</p>
-<p><strong>Good to know:</strong> rear parking is available, and Thursday is Wing Night — wings for $11.99 with a specialty drink.</p></div>
-<div class="photo reveal"><img src="assets/spread.jpg" alt="Overhead spread of Vietnamese dishes including bánh xèo, broken rice and grilled meats" loading="lazy"></div>
-</div></section>
+<!-- STORY -->
+<section class="story" id="about" aria-labelledby="about-h">
+  <div class="wrap">
+    <div class="story-grid">
+      <div>
+        <p class="eyebrow">Our story</p>
+        <h2 id="about-h" style="font-size:clamp(1.9rem,4vw,2.6rem)">More Than a Meal. A Little Taste of Home.</h2>
+        <p class="lede">At Little Saigon, we believe good food brings people together. Our family-run restaurant brings Vietnamese flavours, comforting favourites and warm hospitality to Winnipeg's Exchange District.</p>
+        <p class="lede">The room is casual and family-friendly, with generous portions, plenty of fresh herbs at the table, and a substantial selection of vegetarian and vegan options. Come for a steaming bowl, stay for an iced coffee.</p>
+        <p class="lede">[OWNER: family story, founding year and a real family or team photo go here]</p>
+      </div>
+      <img src="assets/spread.jpg" alt="Overhead spread of Vietnamese dishes including bánh xèo, broken rice and grilled meats" loading="lazy">
+    </div>
+  </div>
+</section>
 
-<section id="favourites" style="background:var(--paper)"><div class="wrap">
-<div class="sec-head reveal"><p class="eyebrow" style="color:var(--red)">Most loved</p><h2>Start with the favourites</h2><p>The dishes guests order again and again — including the weekend-only beef carpaccio.</p></div>
-<div class="cards">
-<article class="card reveal"><img src="assets/poster.jpg" alt="Steaming deluxe pho with beef, herbs, bean sprouts and lime" loading="lazy"><div class="pad"><span class="tag">#1 most liked</span><h3>Deluxe Pho</h3><p>Rare beef, brisket, tripe and beef meatballs in a rich, aromatic broth. Phở đặc biệt.</p><p class="price">$17.95</p></div></article>
-<article class="card reveal"><img src="assets/wings.webp" alt="Crispy fish sauce glazed chicken wings with cilantro" loading="lazy"><div class="pad"><span class="tag">#2 most liked</span><h3>Fish Sauce Glazed Wings</h3><p>Crisp, caramelized and sweet-savoury. Also try tamarind, sweet chili lime, salt &amp; pepper or kung bao.</p><p class="price">$20.55</p></div></article>
-<article class="card reveal"><img src="assets/banh-khot.webp" alt="Bánh khọt prawn coconut pancakes with fresh herbs and dipping sauce" loading="lazy"><div class="pad"><span class="tag">House specialty</span><h3>Bánh Khọt</h3><p>Prawn coconut pancakes with fresh herbs — crisp edges, soft centres, made for dipping.</p></div></article>
-</div>
-<div class="cards" style="margin-top:18px">
-<article class="card reveal"><div class="pad"><span class="tag">Weekend only · fan favourite</span><h3>Vietnamese Beef Carpaccio</h3><p>Bò tái chanh — bright, herby and refreshing. Guests call it a must-try.</p><p class="price">$22.98</p></div></article>
-<article class="card reveal"><div class="pad"><span class="tag">#3 most liked</span><h3>Fried Rice with Roti Chicken</h3><p>Cơm chiên gà rô ti — a hearty house favourite.</p><p class="price">$21.99</p></div></article>
-<article class="card reveal"><div class="pad"><span class="tag">Comfort plate</span><h3>Deluxe Broken Rice</h3><p>Grilled pork chop, shredded pork skin, egg meat loaf and fried egg.</p><p class="price">$21.99</p></div></article>
-</div>
-</div></section>
+<!-- SAIGON GRIND -->
+<section class="grind" id="saigon-grind" aria-labelledby="grind-h">
+  <div class="wrap">
+    <p class="eyebrow" style="color:#ffd9a8">Saigon Grind · attached coffee counter</p>
+    <h2 id="grind-h" style="font-size:clamp(1.9rem,4vw,2.6rem)">Your Vietnamese Coffee Fix.</h2>
+    <p class="lede">Discover the rich flavours of Vietnamese coffee, from traditional iced coffee to our specialty creations.</p>
+    <div class="grind-grid">
+      <div class="grind-card"><h3>Vietnamese Iced Coffee</h3><p>The classic — strong, sweet and ice-cold. $7.99</p></div>
+      <div class="grind-card"><h3>Salted Egg Yolk Coffee</h3><p>[DESCRIPTION: Salted Egg Yolk Coffee] · [PRICE: Salted Egg Yolk Coffee]</p></div>
+      <div class="grind-card"><h3>Black Sesame Latte</h3><p>[DESCRIPTION: Black Sesame Latte] · [PRICE: Black Sesame Latte]</p></div>
+      <div class="grind-card"><h3>Taro Drinks</h3><p>[DESCRIPTION: Taro Drinks] · [PRICE: Taro Drinks]</p></div>
+      <div class="grind-card"><h3>Egg Soda</h3><p>[DESCRIPTION: Egg Soda] · [PRICE: Egg Soda]</p></div>
+    </div>
+    <img class="hero-img" src="assets/coffee.webp" alt="Vietnamese iced coffee dripping through a phin filter over ice and condensed milk" loading="lazy">
+    <p style="margin-top:1.4rem;color:#d8cdb4">Saigon Grind hours: [SAIGON GRIND HOURS — if different from restaurant hours]</p>
+    <p style="margin-top:1.2rem"><a class="btn btn-light" href="menu.html#drinks">Discover Saigon Grind</a></p>
+  </div>
+</section>
 
-<section id="menu" class="menu"><div class="wrap">
-<div class="sec-head reveal"><p class="eyebrow">Menu highlights</p><h2>Soups, bowls &amp; more</h2><p>A taste of the menu. Prices are set by the restaurant and may vary slightly — call for today’s full menu.</p></div>
-<div class="menu-grid">
-<div class="reveal"><h3>Pho &amp; specialty soups</h3>
-<div class="item"><span>Deluxe Rare Beef, Brisket, Tripe &amp; Meatballs<small>Phở đặc biệt</small></span><span class="price">$17.95</span></div>
-<div class="item"><span>Rare Beef &amp; Brisket</span><span class="price">$16.95</span></div>
-<div class="item"><span>Spicy Beef Satay Pho</span></div>
-<div class="item"><span>Vietnamese Crab Noodle Soup<small>Bún riêu</small></span><span class="price">$19.99</span></div>
-<div class="item"><span>Bún Bò Huế<small>Spicy beef noodle soup</small></span></div>
-<div class="item"><span>Fermented Vermicelli Soup<small>Fish, shrimp, squid &amp; vegetables</small></span></div></div>
-<div class="reveal"><h3>Appetizers &amp; wings</h3>
-<div class="item"><span>Spring Rolls (6 pieces)</span><span class="price">$12.10</span></div>
-<div class="item"><span>Shrimp &amp; Pork Salad Rolls (3 pieces)</span><span class="price">$13.30</span></div>
-<div class="item"><span>Fish Sauce Glazed Chicken Wings</span><span class="price">$20.55</span></div>
-<div class="item"><span>Salt &amp; Pepper Fried Chicken Wings</span></div>
-<div class="item"><span>Grilled Beef Salad Rolls (3 pieces)</span></div>
-<div class="item"><span>Vietnamese Beef Carpaccio<small>Weekend only</small></span><span class="price">$22.98</span></div></div>
-<div class="reveal"><h3>Bowls, rice &amp; noodles</h3>
-<div class="item"><span>Charbroiled Beef Rice Vermicelli Bowl</span></div>
-<div class="item"><span>Grilled Beef or Pork Woven Vermicelli Wraps (6)</span><span class="price">$21.75</span></div>
-<div class="item"><span>Deluxe Broken Rice<small>Pork chop, pork skin, egg loaf, fried egg</small></span><span class="price">$21.99</span></div>
-<div class="item"><span>Fried Rice with Roti Chicken</span><span class="price">$21.99</span></div>
-<div class="item"><span>Crispy Chow Mein<small>Beef, BBQ pork or chicken</small></span></div>
-<div class="item"><span>Crispy &amp; Savoury Vietnamese Crêpe<small>Bánh xèo</small></span></div></div>
-<div class="reveal"><h3>Vegetarian &amp; coffee</h3>
-<div class="item"><span>Salt &amp; Pepper Eggplant</span><span class="price">$19.99</span></div>
-<div class="item"><span>Crispy Tofu with Sweet &amp; Sour Peanut Sauce</span><span class="price">$7.00</span></div>
-<div class="item"><span>Vegetable Dumplings</span><span class="price">$6.00</span></div>
-<div class="item"><span>Vietnamese Filtered Coffee with Condensed Milk (Iced)</span><span class="price">$7.99</span></div>
-<div class="item"><span>Saigon Grind specialties<small>Salted egg yolk coffee, black sesame latte, taro drinks &amp; egg soda</small></span></div></div>
-</div>
-<p class="note reveal">Also on the menu: bánh bèo, nem nướng Ninh Hòa, bánh mì, charbroiled beef short ribs, basa fish with ginger scallion soy, and more. Ask about vegetarian and gluten-free options when you call.</p>
-</div></section>
+<!-- REVIEWS -->
+<section id="reviews" aria-labelledby="reviews-h">
+  <div class="wrap">
+    <p class="eyebrow">Guest reviews</p>
+    <h2 id="reviews-h" style="font-size:clamp(1.9rem,4vw,2.6rem)">Loved by Our Guests.</h2>
+    <!-- OWNER: update these two numbers as they change: [RATING: 4.8] [REVIEW COUNT: 350+] -->
+    <div class="rating-line">
+      <span class="rating-badge">★ 4.8 on Google</span>
+      <span>Rated 4.8 stars across more than 350 Google reviews.</span>
+    </div>
+    <div class="review-grid">
+      <figure class="review">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>“Food was fresh and piping hot. Friendly efficient staff. Exceptionally clean eating area.”</blockquote>
+        <figcaption>— Diane L., Google review</figcaption>
+      </figure>
+      <figure class="review">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>“Fantastic foods and friendly service in a very clean environment. The Bún Bò Huế and Broken Rice were delicious and authentic.”</blockquote>
+        <figcaption>— Vivian N., Google review</figcaption>
+      </figure>
+      <figure class="review">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>“Absolutely love this place! The food is fantastic, and the staff are warm, friendly, and attentive.”</blockquote>
+        <figcaption>— Victor Z., Google review</figcaption>
+      </figure>
+    </div>
+    <div class="visit-actions">
+      <!-- OWNER: replace with the real Google review link -->
+      <a class="btn btn-forest" href="#GOOGLE-REVIEW-LINK" data-track="Review click">Leave us a Google review</a>
+      <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Little+Saigon+Restaurant+333+William+Ave+Winnipeg" target="_blank" rel="noopener">Read more reviews</a>
+    </div>
+  </div>
+</section>
 
-<section><div class="wrap grid2">
-<div class="photo reveal"><img src="assets/coffee.webp" alt="Vietnamese iced coffee dripping through a phin filter over ice and condensed milk" loading="lazy"></div>
-<div class="reveal"><p class="eyebrow" style="color:var(--red)">Saigon Grind</p><h2 style="font-size:clamp(1.9rem,4vw,2.8rem)">Coffee, next door</h2>
-<p>The attached Saigon Grind coffee counter pours Vietnamese iced coffee, salted egg yolk coffee, black sesame lattes, taro drinks and egg soda — the perfect finish to a bowl of pho, or a reason to stop in on its own.</p>
-<p><a href="tel:+12046913999"><strong>Call (204) 691-3999</strong></a> to order ahead for pickup.</p></div>
-</div></section>
+<!-- GALLERY -->
+<section id="gallery" aria-labelledby="gallery-h" style="background:var(--cream-2)">
+  <div class="wrap">
+    <p class="eyebrow">Gallery</p>
+    <h2 id="gallery-h" style="font-size:clamp(1.9rem,4vw,2.6rem)">From Our Kitchen</h2>
+    <div class="gallery-grid">
+      <img src="assets/poster.jpg" alt="Steaming deluxe pho with beef, herbs, bean sprouts and lime" loading="lazy">
+      <img src="assets/wings.webp" alt="Crispy fish sauce glazed chicken wings with cilantro" loading="lazy">
+      <img src="assets/banh-khot.webp" alt="Bánh khọt prawn coconut pancakes with fresh herbs and dipping sauce" loading="lazy">
+      <img src="assets/coffee.webp" alt="Vietnamese iced coffee dripping through a phin filter over ice and condensed milk" loading="lazy">
+      <img src="assets/spread.jpg" alt="Overhead spread of Vietnamese dishes including bánh xèo, broken rice and grilled meats" loading="lazy">
+    </div>
+    <p class="lede" style="margin-top:1.2rem">[PHOTOGRAPHY CHECKLIST: real photos of the dining room, the family/team, food preparation, and each signature dish to replace the current imagery]</p>
+  </div>
+</section>
 
-<section id="reviews" style="background:var(--paper)"><div class="wrap">
-<div class="sec-head reveal"><p class="eyebrow" style="color:var(--red)">Guest reviews</p><h2>What guests say</h2><p>Rated 4.8 stars across more than 350 Google reviews.</p></div>
-<div class="reviews">
-<figure class="review reveal"><div class="stars" aria-label="5 stars">★★★★★</div><blockquote>“Food was fresh and piping hot. Friendly efficient staff. Exceptionally clean eating area.”</blockquote><figcaption>— Diane Loepp, Google review</figcaption></figure>
-<figure class="review reveal"><div class="stars" aria-label="5 stars">★★★★★</div><blockquote>“Fantastic foods and friendly service in a very clean environment. The Bún Bò Huế and Broken Rice were delicious and authentic.”</blockquote><figcaption>— Vivian Nguyen, Google review</figcaption></figure>
-<figure class="review reveal"><div class="stars" aria-label="5 stars">★★★★★</div><blockquote>“Absolutely love this place! The food is fantastic, and the staff are warm, friendly, and attentive.”</blockquote><figcaption>— Victor Zhou, Google review</figcaption></figure>
-</div></div></section>
+<!-- VISIT -->
+<section id="visit" aria-labelledby="visit-h">
+  <div class="wrap">
+    <p class="eyebrow">Visit us</p>
+    <h2 id="visit-h" style="font-size:clamp(1.9rem,4vw,2.6rem)">Hours &amp; Location</h2>
+    <div class="visit-grid">
+      <div>
+        <h3 style="font-size:1.3rem">Little Saigon Restaurant</h3>
+        <p>333 William Ave, Winnipeg, MB R3A 0H8<br>Exchange District</p>
+        <p style="margin-top:.6rem"><a href="tel:+12046913999" data-track="Call tap"><strong>(204) 691-3999</strong></a> · <a href="https://www.instagram.com/littlesaigon.wpg/" target="_blank" rel="noopener">@littlesaigon.wpg</a></p>
+        <ul class="hours" id="hoursList" aria-label="Weekly opening hours">
+          <li data-day="1"><span>Monday</span><span>11:00 AM – 9:00 PM</span></li>
+          <li data-day="2"><span>Tuesday</span><span>Closed</span></li>
+          <li data-day="3"><span>Wednesday</span><span>11:00 AM – 9:00 PM</span></li>
+          <li data-day="4"><span>Thursday</span><span>11:00 AM – 9:00 PM</span></li>
+          <li data-day="5"><span>Friday</span><span>11:00 AM – 9:00 PM</span></li>
+          <li data-day="6"><span>Saturday</span><span>11:00 AM – 9:00 PM</span></li>
+          <li data-day="0"><span>Sunday</span><span>11:00 AM – 9:00 PM</span></li>
+        </ul>
+        <p style="margin-top:.8rem;color:var(--muted)">Holiday hours can change — please call to confirm. [CONFIRMED HOURS: owner to verify]</p>
+        <ul class="visit-facts">
+          <li>Rear parking available. [HOW TO FIND REAR PARKING]</li>
+          <li>Dine-in and takeout.</li>
+          <li>Accessibility: [ACCESSIBILITY]</li>
+          <li>Payment methods: [PAYMENT METHODS]</li>
+          <li>Reservations / large groups: [RESERVATION / LARGE GROUP INFO]</li>
+        </ul>
+        <div class="visit-actions">
+          <a class="btn btn-forest" href="https://www.google.com/maps/dir/?api=1&amp;destination=Little+Saigon+Restaurant+333+William+Ave+Winnipeg+MB+R3A+0H8" target="_blank" rel="noopener" data-track="Directions click">Google Maps directions</a>
+          <a class="btn btn-ghost" href="https://maps.apple.com/?daddr=333+William+Ave,+Winnipeg,+MB+R3A+0H8" target="_blank" rel="noopener" data-track="Directions click">Apple Maps directions</a>
+          <a class="btn btn-primary" href="tel:+12046913999" data-track="Call tap">Call the restaurant</a>
+        </div>
+      </div>
+      <div>
+        <iframe class="map-frame" title="Map showing Little Saigon Restaurant at 333 William Ave, Winnipeg" src="https://www.google.com/maps?q=Little+Saigon+Restaurant+333+William+Ave+Winnipeg+MB+R3A+0H8&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
 
-<section id="visit"><div class="wrap">
-<div class="sec-head reveal"><p class="eyebrow" style="color:var(--red)">Visit</p><h2>Hours &amp; location</h2></div>
-<div class="visit">
-<div class="info reveal"><h3 style="margin-bottom:12px">Little Saigon Restaurant</h3>
-<p><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Little+Saigon+Restaurant+333+William+Ave+Winnipeg+MB+R3A+0H8" target="_blank" rel="noopener"><strong>333 William Ave, Winnipeg, MB R3A 0H8</strong></a><br>Exchange District · Rear parking</p>
-<p><a href="tel:+12046913999"><strong>(204) 691-3999</strong></a> · <a href="https://www.instagram.com/littlesaigon.wpg" target="_blank" rel="noopener">@littlesaigon.wpg</a></p>
-<ul class="hours" id="hoursList">
-<li data-day="1"><span>Monday</span><span>11:00 AM – 9:00 PM</span></li>
-<li data-day="2"><span>Tuesday</span><span>Closed</span></li>
-<li data-day="3"><span>Wednesday</span><span>11:00 AM – 9:00 PM</span></li>
-<li data-day="4"><span>Thursday</span><span>11:00 AM – 9:00 PM</span></li>
-<li data-day="5"><span>Friday</span><span>11:00 AM – 9:00 PM</span></li>
-<li data-day="6"><span>Saturday</span><span>11:00 AM – 9:00 PM</span></li>
-<li data-day="0"><span>Sunday</span><span>11:00 AM – 9:00 PM</span></li>
-</ul>
-<p style="color:var(--muted);font-size:.9rem">Holiday hours can change — please call to confirm.</p>
-<p><a class="btn btn-gold" href="https://www.google.com/maps/dir/?api=1&amp;destination=Little+Saigon+Restaurant+333+William+Ave+Winnipeg+MB+R3A+0H8" target="_blank" rel="noopener">Get directions</a></p></div>
-<div class="map reveal"><iframe title="Map to Little Saigon Restaurant, 333 William Ave, Winnipeg" loading="lazy" src="https://www.google.com/maps?q=Little+Saigon+Restaurant+333+William+Ave+Winnipeg+MB&output=embed"></iframe></div>
-</div></div></section>
+<!-- FINAL CTA -->
+<section class="final-cta" aria-labelledby="final-h">
+  <div class="wrap">
+    <h2 id="final-h">Your Table at Little Saigon Awaits.</h2>
+    <p>Come hungry. Leave happy. We look forward to feeding you.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="menu.html">Explore Menu</a>
+      <!-- OWNER: replace #ORDERING-LINK with the real ordering URL -->
+      <a class="btn btn-light" href="#ORDERING-LINK" data-track="Order click">Order Online</a>
+      <a class="btn btn-outline-light" href="https://www.google.com/maps/dir/?api=1&amp;destination=Little+Saigon+Restaurant+333+William+Ave+Winnipeg+MB+R3A+0H8" target="_blank" rel="noopener" data-track="Directions click">Get Directions</a>
+    </div>
+  </div>
+</section>
 </main>
 
-<footer><div class="wrap foot">
-<div><p style="font-family:Fraunces,serif;font-size:1.4rem;margin:0 0 8px">Little Saigon Restaurant</p><p>333 William Ave, Winnipeg, MB R3A 0H8<br><a href="tel:+12046913999">(204) 691-3999</a></p></div>
-<div><p><a href="#menu">Menu</a> · <a href="#reviews">Reviews</a> · <a href="#visit">Hours &amp; location</a></p><p style="color:#bfae94;font-size:.9rem">Family-run Vietnamese food in Winnipeg’s Exchange District.</p></div>
-</div></footer>
+<footer class="site">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="brand-name">Little Saigon Restaurant</p>
+      <p>333 William Ave, Winnipeg, MB R3A 0H8<br>
+      <a href="tel:+12046913999" data-track="Call tap">(204) 691-3999</a> · <a href="https://www.instagram.com/littlesaigon.wpg/" target="_blank" rel="noopener">@littlesaigon.wpg</a></p>
+      <p style="margin-top:.6rem">Family-run Vietnamese food in Winnipeg's Exchange District.</p>
+    </div>
+    <nav aria-label="Footer navigation">
+      <p><a href="#favourites">Signature Dishes</a> · <a href="menu.html">Menu</a> · <a href="#about">Our Story</a></p>
+      <p><a href="#saigon-grind">Saigon Grind</a> · <a href="#reviews">Reviews</a> · <a href="#visit">Visit</a></p>
+      <!-- OWNER: replace #ORDERING-LINK with the real ordering URL -->
+      <p style="margin-top:.6rem"><a href="#ORDERING-LINK" data-track="Order click">Order online</a> · <a href="tel:+12046913999" data-track="Call tap">Call to order</a></p>
+    </nav>
+  </div>
+</footer>
 
-<nav class="mobilebar" aria-label="Quick actions"><a href="tel:+12046913999">Call now</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Little+Saigon+Restaurant+333+William+Ave+Winnipeg+MB+R3A+0H8" target="_blank" rel="noopener">Directions</a></nav>
+<!-- Sticky mobile action bar -->
+<nav class="mobile-bar" aria-label="Quick actions">
+  <!-- OWNER: replace #ORDERING-LINK with the real ordering URL -->
+  <a class="order" href="#ORDERING-LINK" data-track="Order click">Order<small>online</small></a>
+  <a href="tel:+12046913999" data-track="Call tap">Call<small>(204) 691-3999</small></a>
+  <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Little+Saigon+Restaurant+333+William+Ave+Winnipeg+MB+R3A+0H8" target="_blank" rel="noopener" data-track="Directions click">Directions<small>333 William Ave</small></a>
+</nav>
 
 <script>
 (function(){
-var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-// Open-now status (America/Winnipeg, Tue closed, 11:00-21:00)
-try{
-  var now=new Date(new Date().toLocaleString('en-US',{timeZone:'America/Winnipeg'}));
-  var day=now.getDay(), mins=now.getHours()*60+now.getMinutes();
-  var open = day!==2 && mins>=660 && mins<1260;
-  var el=document.getElementById('openStatus');
-  if(el) el.textContent = open ? 'Open now · until 9:00 PM' : (day===2 ? 'Closed Tuesdays · Open Wed 11 AM' : 'Opens 11:00 AM');
-  var li=document.querySelector('#hoursList [data-day="'+day+'"]');
-  if(li) li.classList.add('today');
-}catch(e){}
-// Reveal on scroll
-var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}})},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
-// Transform-based parallax, 3 depths, rAF-throttled
-if(!reduce){
-  var layers=[].slice.call(document.querySelectorAll('[data-parallax]'));
-  var ticking=false;
-  function update(){
-    var y=window.scrollY||0;
-    layers.forEach(function(el){
-      var s=parseFloat(el.getAttribute('data-parallax'))||0;
-      el.style.transform='translate3d(0,'+(y*s)+'px,0)';
-    });
-    ticking=false;
+  // Open-now badge + today highlight, calculated in America/Winnipeg time.
+  var OPEN = {0:[11,21],1:[11,21],2:null,3:[11,21],4:[11,21],5:[11,21],6:[11,21]}; // 0=Sun ... 2=Tue closed
+  var DAYS = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  function winnipegNow(){
+    var parts = new Intl.DateTimeFormat("en-CA",{timeZone:"America/Winnipeg",weekday:"short",hour:"numeric",minute:"numeric",hour12:false}).formatToParts(new Date());
+    var o={}; parts.forEach(function(p){o[p.type]=p.value});
+    var dayMap={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+    return {day:dayMap[o.weekday], hour:parseInt(o.hour,10)%24, minute:parseInt(o.minute,10)};
   }
-  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(update);}},{passive:true});
-  update();
-}
+  function fmt(h){ var ap = h>=12 ? "pm" : "am"; var hh = h%12; if(hh===0) hh=12; return hh+ap; }
+  var now = winnipegNow();
+  var badge = document.getElementById("openBadge");
+  var today = OPEN[now.day];
+  var mins = now.hour*60+now.minute;
+  if(today && mins >= today[0]*60 && mins < today[1]*60){
+    badge.innerHTML = "<strong>Open now</strong> · until "+fmt(today[1])+" today";
+  } else if(today && mins < today[0]*60){
+    badge.innerHTML = "<strong>Opens today</strong> · "+fmt(today[0]);
+  } else {
+    var d = now.day;
+    do { d = (d+1)%7; } while(!OPEN[d]);
+    var when = (d === (now.day+1)%7) ? "tomorrow" : DAYS[d];
+    badge.innerHTML = "<strong>Closed today</strong> · opens "+when+" "+fmt(OPEN[d][0]);
+  }
+  document.querySelectorAll("#hoursList li").forEach(function(li){
+    if(parseInt(li.dataset.day,10) === now.day) li.classList.add("today");
+  });
+
+  // Hero parallax (transform-based) + reduced-motion handling.
+  var video = document.getElementById("heroVideo");
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(reduce && video){ video.pause(); video.removeAttribute("autoplay"); }
+  if(!reduce && video){
+    var ticking = false;
+    window.addEventListener("scroll", function(){
+      if(!ticking){ ticking = true; requestAnimationFrame(function(){
+        var y = window.scrollY;
+        if(y < window.innerHeight) video.style.transform = "translateY("+(y*0.18)+"px)";
+        ticking = false;
+      });}
+    }, {passive:true});
+  }
+
+  // Privacy-friendly event tracking (Plausible custom events; no-op if blocked).
+  document.querySelectorAll("[data-track]").forEach(function(el){
+    el.addEventListener("click", function(){
+      if(window.plausible) plausible(el.dataset.track);
+    });
+  });
 })();
 </script>
 </body>

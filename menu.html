@@ -82,6 +82,13 @@ footer.site a{color:#f3ecdd}
 .mobile-bar a small{font-weight:500;font-size:.72rem;opacity:.85}
 @media(max-width:860px){.mobile-bar{display:flex}body{padding-bottom:60px}}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+/* Sliders (Copenhagen): hover/focus fades the text to reveal the dish photo */
+.item{position:relative;overflow:hidden}
+.item .reveal-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .35s ease}
+.item .item-in{position:relative;z-index:1;transition:opacity .35s ease}
+.item:hover .reveal-img,.item:focus-within .reveal-img{opacity:1}
+.item:hover .item-in,.item:focus-within .item-in{opacity:0}
+@media (prefers-reduced-motion: reduce){.item .reveal-img,.item .item-in{transition:none}}
 </style>
 </head>
 <body>
@@ -152,7 +159,7 @@ footer.site a{color:#f3ecdd}
 */
 var MENU = [
   { id:"pho", title:"Pho & Vietnamese Noodle Soups", items:[
-    { name:"Deluxe Pho", vn:"Phở đặc biệt", desc:"Rare beef, brisket, tripe and beef meatballs served in a rich, aromatic Vietnamese broth.", price:17.95, tags:[] },
+    { name:"Deluxe Pho", vn:"Phở đặc biệt", desc:"Rare beef, brisket, tripe and beef meatballs served in a rich, aromatic Vietnamese broth.", price:17.95, tags:[], img:"assets/poster.jpg", imgAlt:"Steaming deluxe pho with beef, herbs, bean sprouts and lime" },
     { name:"Spicy Beef Satay Pho", vn:null, desc:null, price:null, tags:[] },
     { name:"Crab Noodle Soup", vn:null, desc:null, price:19.99, tags:[] }
   ]},
@@ -161,8 +168,8 @@ var MENU = [
     { name:"Bún Riêu", vn:"Bún riêu", desc:null, price:null, tags:[] }
   ]},
   { id:"appetizers", title:"Appetizers & Wings", items:[
-    { name:"Fish Sauce Glazed Wings", vn:null, desc:"Crispy chicken wings coated in a delicious sweet and savoury Vietnamese fish sauce glaze. Also try tamarind, sweet chili lime, salt & pepper or kung bao.", price:20.55, tags:[] },
-    { name:"Bánh Khọt", vn:"Bánh khọt", desc:"Savoury Vietnamese mini coconut pancakes topped with prawns, served with fresh herbs and dipping sauce.", price:null, tags:[] },
+    { name:"Fish Sauce Glazed Wings", vn:null, desc:"Crispy chicken wings coated in a delicious sweet and savoury Vietnamese fish sauce glaze. Also try tamarind, sweet chili lime, salt & pepper or kung bao.", price:20.55, tags:[], img:"assets/wings.webp", imgAlt:"Crispy fish sauce glazed chicken wings with cilantro" },
+    { name:"Bánh Khọt", vn:"Bánh khọt", desc:"Savoury Vietnamese mini coconut pancakes topped with prawns, served with fresh herbs and dipping sauce.", price:null, tags:[], img:"assets/banh-khot.webp", imgAlt:"Bánh khọt prawn coconut pancakes with fresh herbs and dipping sauce" },
     { name:"Vietnamese Beef Carpaccio", vn:"Bò tái chanh", desc:"Bright, herby and refreshing. Weekend only.", price:22.98, tags:["Weekend only"] },
     { name:"Spring Rolls", vn:null, desc:null, price:12.10, tags:[] },
     { name:"Shrimp & Pork Salad Rolls", vn:null, desc:null, price:13.30, tags:[] },
@@ -181,7 +188,7 @@ var MENU = [
     { name:"Salt & Pepper Eggplant", vn:null, desc:null, price:19.99, tags:[] }
   ]},
   { id:"drinks", title:"Drinks & Saigon Grind", items:[
-    { name:"Vietnamese Iced Coffee", vn:"Cà phê sữa đá", desc:"The classic — strong, sweet and ice-cold.", price:7.99, tags:[] },
+    { name:"Vietnamese Iced Coffee", vn:"Cà phê sữa đá", desc:"The classic — strong, sweet and ice-cold.", price:7.99, tags:[], img:"assets/coffee.webp", imgAlt:"Vietnamese iced coffee dripping through a phin filter over ice and condensed milk" },
     { name:"Salted Egg Yolk Coffee", vn:null, desc:null, price:null, tags:[] },
     { name:"Black Sesame Latte", vn:null, desc:null, price:null, tags:[] },
     { name:"Taro Drinks", vn:null, desc:null, price:null, tags:[] },
@@ -216,7 +223,9 @@ var MENU = [
     sec.setAttribute("aria-labelledby", "h-" + cat.id);
     var html = "<h2 id='h-" + cat.id + "'>" + esc(cat.title) + "</h2><div class='menu-grid'>";
     cat.items.forEach(function(it){
-      html += "<article class='item'><div class='item-top'><div><h3>" + esc(it.name) + "</h3>";
+      html += "<article class='item' tabindex='0'>";
+      if(it.img) html += "<img class='reveal-img' src='" + it.img + "' alt='" + esc(it.imgAlt || it.name) + "' loading='lazy'>";
+      html += "<div class='item-in'><div class='item-top'><div><h3>" + esc(it.name) + "</h3>";
       if(it.vn) html += "<p class='vn'>" + esc(it.vn) + "</p>";
       html += "</div>";
       if(it.price === null) html += "<span class='price placeholder'>[PRICE: " + esc(it.name) + "]</span>";
@@ -228,7 +237,7 @@ var MENU = [
         it.tags.forEach(function(t){ html += "<span class='tag note'>" + esc(t) + "</span>"; });
         html += "</div>";
       }
-      html += "</article>";
+      html += "</div></article>";
     });
     html += "</div>";
     sec.innerHTML = html;

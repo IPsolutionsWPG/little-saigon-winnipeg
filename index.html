@@ -170,6 +170,39 @@ footer .brand-name{color:#fff}
 .mobile-bar a.order{background:var(--terra);color:#fff}
 .mobile-bar a small{font-weight:500;font-size:.72rem;opacity:.85}
 @media(max-width:860px){.mobile-bar{display:flex}body{padding-bottom:60px}}
+/* --- Tenzo-inspired upgrades --- */
+/* Warpigs: logo shrinks into the sticky bar on scroll */
+.brand img{transition:width .25s ease,height .25s ease}
+.header-in{transition:padding .25s ease}
+header.site.scrolled .header-in{padding:.4rem 0}
+header.site.scrolled .brand img{width:34px;height:34px}
+header.site.scrolled .brand-name{font-size:1rem}
+/* Craft & Kitchen: active nav state so you can't get lost */
+nav.main a{border-bottom:3px solid transparent}
+nav.main a.active{color:var(--terra-dark);border-bottom-color:var(--terra)}
+/* Bottega Caruso: hand-drawn scribble underlines on key words */
+.u-scribble{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='8' viewBox='0 0 60 8'%3E%3Cpath d='M2 6 Q 12 1, 22 5 T 42 5 T 58 4' fill='none' stroke='%23d98a1f' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E") bottom left repeat-x;background-size:60px 8px;padding-bottom:.12em}
+.u-circle{position:relative;white-space:nowrap}
+.u-circle::after{content:"";position:absolute;inset:-.18em -.35em;border:2.5px solid #d98a1f;border-radius:50% 46% 54% 48%/62% 55% 45% 58%;transform:rotate(-2deg);pointer-events:none}
+/* Middle Child (tasteful): scrolling marquee strip + Lox in a Box trust signal */
+.marquee{background:var(--terra);color:#fff;overflow:hidden;padding:.7rem 0}
+.marquee-track{display:flex;gap:2.5rem;width:max-content;animation:marquee 28s linear infinite;font-family:"Fraunces",serif;font-weight:600;letter-spacing:.04em;white-space:nowrap}
+.marquee-track span{display:flex;align-items:center;gap:2.5rem}
+.marquee-track i{font-style:normal;color:#ffd9a8}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* Bresca / Dinner Ladies: gentle reveal-on-scroll */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+/* Bresca: fixed photo band the content scrolls over (desktop only) */
+.story-band{height:46vh;min-height:300px;background:url("assets/spread.jpg") center/cover no-repeat fixed}
+@media(max-width:860px){.story-band{background-attachment:scroll}}
+/* Bottega Caruso / Darwin & Wallace: Instagram tiles (links out, not a fake feed) */
+.ig-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:.8rem;margin-top:1.6rem}
+.ig-tile{position:relative;border-radius:14px;overflow:hidden;display:block}
+.ig-tile img{height:190px;width:100%;object-fit:cover;transition:transform .3s ease}
+.ig-tile:hover img{transform:scale(1.06)}
+.ig-tile span{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(20,16,12,.75));color:#fff;font-size:.82rem;font-weight:600;padding:1.4rem .8rem .6rem}
+@media (prefers-reduced-motion: reduce){.marquee-track{animation:none}.reveal{opacity:1;transform:none;transition:none}.ig-tile img{transition:none}}
 </style>
 </head>
 <body>
@@ -208,7 +241,7 @@ footer .brand-name{color:#fff}
   <div class="hero-shade"></div>
   <div class="wrap hero-in">
     <p class="eyebrow" style="color:#ffd9a8">Exchange District · Winnipeg</p>
-    <h1>A Taste of Vietnam, Right Here in Winnipeg.</h1>
+    <h1>A Taste of <span class="u-scribble">Vietnam</span>, Right Here in Winnipeg.</h1>
     <p class="sub">Discover authentic Vietnamese comfort food — steaming bowls of pho, crispy fish sauce wings and specialty coffee. Family-run and proudly serving Winnipeg's Exchange District.</p>
     <div class="hero-ctas">
       <a class="btn btn-primary" href="menu.html">Explore Our Menu</a>
@@ -224,6 +257,14 @@ footer .brand-name{color:#fff}
     </div>
   </div>
 </section>
+
+<!-- Marquee strip: signature dishes + trust signal -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Phở Đặc Biệt <i>✦</i> Fish Sauce Wings <i>✦</i> Bánh Khọt <i>✦</i> Bún Bò Huế <i>✦</i> Broken Rice <i>✦</i> Vietnamese Iced Coffee <i>✦</i> ★ 4.8 · 350+ Google reviews <i>✦</i></span>
+    <span>Phở Đặc Biệt <i>✦</i> Fish Sauce Wings <i>✦</i> Bánh Khọt <i>✦</i> Bún Bò Huế <i>✦</i> Broken Rice <i>✦</i> Vietnamese Iced Coffee <i>✦</i> ★ 4.8 · 350+ Google reviews <i>✦</i></span>
+  </div>
+</div>
 
 <!-- THURSDAY WING NIGHT PROMO -->
 <div class="promo" role="region" aria-label="Thursday Wing Night promotion">
@@ -241,7 +282,7 @@ footer .brand-name{color:#fff}
 <section id="favourites" aria-labelledby="favourites-h">
   <div class="wrap">
     <p class="eyebrow">Signature dishes</p>
-    <h2 id="favourites-h" style="font-size:clamp(1.9rem,4vw,2.6rem)">Made to Be Remembered.</h2>
+    <h2 id="favourites-h" style="font-size:clamp(1.9rem,4vw,2.6rem)">Made to Be <span class="u-circle">Remembered</span>.</h2>
     <p class="lede">From comforting bowls of pho to crispy Vietnamese specialties, discover some of the dishes that keep our guests coming back.</p>
     <div class="dish-grid">
       <article class="dish">
@@ -319,6 +360,9 @@ footer .brand-name{color:#fff}
   </div>
 </section>
 
+<!-- Fixed photo band (Bresca-style continuity) -->
+<div class="story-band" role="img" aria-label="Overhead spread of Vietnamese dishes at Little Saigon"></div>
+
 <!-- SAIGON GRIND -->
 <section class="grind" id="saigon-grind" aria-labelledby="grind-h">
   <div class="wrap">
@@ -386,6 +430,15 @@ footer .brand-name{color:#fff}
       <img src="assets/spread.jpg" alt="Overhead spread of Vietnamese dishes including bánh xèo, broken rice and grilled meats" loading="lazy">
     </div>
     <p class="lede" style="margin-top:1.2rem">[PHOTOGRAPHY CHECKLIST: real photos of the dining room, the family/team, food preparation, and each signature dish to replace the current imagery]</p>
+    <h3 style="margin-top:2.2rem;font-size:1.4rem">Follow along <a href="https://www.instagram.com/littlesaigon.wpg/" target="_blank" rel="noopener">@littlesaigon.wpg</a></h3>
+    <p class="lede">Tag us in your meal — we love seeing your table. These tiles link to our Instagram.</p>
+    <div class="ig-grid">
+      <a class="ig-tile" href="https://www.instagram.com/littlesaigon.wpg/" target="_blank" rel="noopener"><img src="assets/poster.jpg" alt="Steaming deluxe pho at Little Saigon" loading="lazy"><span>Deluxe Pho</span></a>
+      <a class="ig-tile" href="https://www.instagram.com/littlesaigon.wpg/" target="_blank" rel="noopener"><img src="assets/wings.webp" alt="Fish sauce glazed wings at Little Saigon" loading="lazy"><span>Fish Sauce Wings</span></a>
+      <a class="ig-tile" href="https://www.instagram.com/littlesaigon.wpg/" target="_blank" rel="noopener"><img src="assets/banh-khot.webp" alt="Bánh khọt at Little Saigon" loading="lazy"><span>Bánh Khọt</span></a>
+      <a class="ig-tile" href="https://www.instagram.com/littlesaigon.wpg/" target="_blank" rel="noopener"><img src="assets/coffee.webp" alt="Vietnamese iced coffee at Saigon Grind" loading="lazy"><span>Saigon Grind Coffee</span></a>
+      <a class="ig-tile" href="https://www.instagram.com/littlesaigon.wpg/" target="_blank" rel="noopener"><img src="assets/spread.jpg" alt="A spread of Vietnamese dishes at Little Saigon" loading="lazy"><span>The Full Spread</span></a>
+    </div>
   </div>
 </section>
 
@@ -520,6 +573,37 @@ footer .brand-name{color:#fff}
       if(window.plausible) plausible(el.dataset.track);
     });
   });
+
+  // Warpigs: shrink the sticky header once you scroll.
+  var header = document.querySelector("header.site");
+  window.addEventListener("scroll", function(){
+    header.classList.toggle("scrolled", window.scrollY > 60);
+  }, {passive:true});
+
+  // Bresca / Dinner Ladies: gentle reveal-on-scroll (off under reduced motion).
+  var revealEls = document.querySelectorAll("section .wrap > *, .dish, .review, .grind-card");
+  if(!reduce && "IntersectionObserver" in window){
+    revealEls.forEach(function(el){ el.classList.add("reveal"); });
+    var ro = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); ro.unobserve(e.target); } });
+    }, {threshold: 0.12});
+    revealEls.forEach(function(el){ ro.observe(el); });
+  }
+
+  // Craft & Kitchen: highlight the nav link for the section you're in.
+  var navLinks = document.querySelectorAll("nav.main a[href^='#']");
+  if("IntersectionObserver" in window){
+    var so = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          navLinks.forEach(function(a){ a.classList.toggle("active", a.getAttribute("href") === "#" + e.target.id); });
+        }
+      });
+    }, {rootMargin: "-40% 0px -55% 0px"});
+    ["favourites","about","saigon-grind","reviews","visit"].forEach(function(id){
+      var s = document.getElementById(id); if(s) so.observe(s);
+    });
+  }
 })();
 </script>
 </body>

@@ -110,7 +110,7 @@ nav.main a:hover{color:var(--terra-dark)}
 .promo p{color:#e8dfc9;max-width:36rem}
 .promo .note{font-size:.85rem;color:#cfc3a6}
 /* Signature dishes */
-.dish-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.6rem;margin-top:2.2rem}
+.dish-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:1.6rem;margin-top:2.2rem}
 .dish{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
 .dish img{height:230px;width:100%;object-fit:cover}
 .dish-body{padding:1.3rem 1.4rem 1.5rem;display:flex;flex-direction:column;gap:.4rem;flex:1}
@@ -134,7 +134,7 @@ nav.main a:hover{color:var(--terra-dark)}
 .grind-card p{font-size:.92rem;color:#e5dbc4}
 .grind img.hero-img{border-radius:var(--radius);margin-top:2rem;height:320px;width:100%;object-fit:cover}
 /* Reviews */
-.review-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.4rem;margin-top:2rem}
+.review-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:1.4rem;margin-top:2rem}
 .review{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem;box-shadow:var(--shadow)}
 .stars{color:#d98a1f;letter-spacing:.2em;font-size:1.05rem}
 .review blockquote{margin:.7rem 0;color:var(--charcoal)}
@@ -203,6 +203,32 @@ nav.main a.active{color:var(--terra-dark);border-bottom-color:var(--terra)}
 .ig-tile:hover img{transform:scale(1.06)}
 .ig-tile span{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(20,16,12,.75));color:#fff;font-size:.82rem;font-weight:600;padding:1.4rem .8rem .6rem}
 @media (prefers-reduced-motion: reduce){.marquee-track{animation:none}.reveal{opacity:1;transform:none;transition:none}.ig-tile img{transition:none}}
+/* --- Mobile optimization pass --- */
+.menu-toggle{display:none;margin-left:.4rem;min-width:48px;min-height:48px;border:2px solid var(--forest);background:transparent;border-radius:12px;color:var(--forest);font-size:1.3rem;line-height:1;cursor:pointer}
+@media(max-width:860px){
+  .menu-toggle{display:inline-flex;align-items:center;justify-content:center}
+  nav.main{display:none;position:absolute;top:100%;left:0;right:0;background:var(--white);flex-direction:column;align-items:stretch;gap:0;padding:.6rem 1.25rem 1rem;border-bottom:1px solid var(--line);box-shadow:var(--shadow);margin-left:0}
+  nav.main.open{display:flex}
+  nav.main a{padding:.85rem 0;border-bottom:1px solid var(--line);font-size:1.05rem}
+  nav.main a.active{border-bottom-color:var(--line);color:var(--terra-dark)}
+  header.site{position:sticky}
+  .header-in{position:relative;flex-wrap:nowrap}
+  .brand-name{font-size:1.02rem}
+  .brand-sub{display:none}
+  .hero{min-height:78svh}
+  .hero-in{padding:4.5rem 0 3rem}
+  .hero-ctas .btn{flex:1 1 100%}
+  .chip{font-size:.8rem;padding:.4rem .7rem}
+  section{padding:3rem 0}
+  .dish img{height:200px}
+  .grind img.hero-img{height:230px}
+  .map-frame{height:280px}
+  .mobile-bar{padding-bottom:env(safe-area-inset-bottom)}
+  .mobile-bar a{min-height:58px}
+  footer.site{padding-bottom:8.5rem}
+  .visit-actions .btn{flex:1 1 100%}
+  .promo-in{flex-direction:column;align-items:flex-start}
+}
 </style>
 </head>
 <body>
@@ -213,7 +239,7 @@ nav.main a.active{color:var(--terra-dark);border-bottom-color:var(--terra)}
       <img src="assets/logo-512.png" alt="Little Saigon Restaurant logo" width="44" height="44">
       <span><span class="brand-name">Little Saigon</span><br><span class="brand-sub">Restaurant · Winnipeg</span></span>
     </a>
-    <nav class="main" aria-label="Main navigation">
+    <nav class="main" id="mainNav" aria-label="Main navigation">
       <a href="#favourites">Signature Dishes</a>
       <a href="menu.html">Menu</a>
       <a href="#about">Our Story</a>
@@ -226,6 +252,7 @@ nav.main a.active{color:var(--terra-dark);border-bottom-color:var(--terra)}
       <a class="btn btn-primary" href="#ORDERING-LINK" data-track="Order click">Order online</a>
       <a class="btn btn-ghost" href="tel:+12046913999" data-track="Call tap">Call (204) 691-3999</a>
     </div>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Open menu">☰</button>
   </div>
 </header>
 
@@ -573,6 +600,25 @@ nav.main a.active{color:var(--terra-dark);border-bottom-color:var(--terra)}
       if(window.plausible) plausible(el.dataset.track);
     });
   });
+
+  // Mobile menu toggle.
+  var toggle = document.getElementById("menuToggle");
+  var mainNav = document.getElementById("mainNav");
+  if(toggle && mainNav){
+    toggle.addEventListener("click", function(){
+      var open = mainNav.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      toggle.textContent = open ? "✕" : "☰";
+    });
+    mainNav.querySelectorAll("a").forEach(function(a){
+      a.addEventListener("click", function(){
+        mainNav.classList.remove("open");
+        toggle.setAttribute("aria-expanded","false");
+        toggle.textContent = "☰";
+      });
+    });
+  }
 
   // Warpigs: shrink the sticky header once you scroll.
   var header = document.querySelector("header.site");

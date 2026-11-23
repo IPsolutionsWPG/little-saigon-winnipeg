@@ -58,7 +58,7 @@ header.site{position:sticky;top:0;z-index:100;background:rgba(250,246,238,.94);b
 .cat-btn[aria-pressed="true"]{background:var(--forest);color:#fff}
 .menu-cat{padding:2.8rem 0 1rem}
 .menu-cat h2{font-size:1.7rem;margin-bottom:1.2rem}
-.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:1.2rem}
 .item{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:1.2rem 1.3rem;box-shadow:var(--shadow)}
 .item-top{display:flex;justify-content:space-between;gap:1rem;align-items:baseline}
 .item h3{font-size:1.12rem}
@@ -89,6 +89,18 @@ footer.site a{color:#f3ecdd}
 .item:hover .reveal-img,.item:focus-within .reveal-img{opacity:1}
 .item:hover .item-in,.item:focus-within .item-in{opacity:0}
 @media (prefers-reduced-motion: reduce){.item .reveal-img,.item .item-in{transition:none}}
+/* Mobile: tap a card to reveal its photo (hover doesn't exist on touch) */
+.item.show-img .reveal-img{opacity:1}
+.item.show-img .item-in{opacity:0}
+.item .tap-hint{display:none;font-size:.78rem;color:var(--terra-dark);font-weight:600;margin-top:.4rem}
+@media(max-width:860px){
+  .cat-nav{top:65px}
+  .item .tap-hint{display:block}
+  .mobile-bar{padding-bottom:env(safe-area-inset-bottom)}
+  .menu-hero{padding:2.4rem 0 1.2rem}
+  .order-cta .btn{flex:1 1 100%}
+  footer.site{padding-bottom:8.5rem}
+}
 </style>
 </head>
 <body>
@@ -232,6 +244,7 @@ var MENU = [
       else html += "<span class='price'>" + money(it.price) + "</span>";
       html += "</div>";
       html += "<p>" + (it.desc ? esc(it.desc) : "[DESCRIPTION: " + esc(it.name) + "]") + "</p>";
+      if(it.img) html += "<p class='tap-hint'>Tap to see the dish</p>";
       if(it.tags && it.tags.length){
         html += "<div class='tags'>";
         it.tags.forEach(function(t){ html += "<span class='tag note'>" + esc(t) + "</span>"; });
@@ -242,6 +255,13 @@ var MENU = [
     html += "</div>";
     sec.innerHTML = html;
     root.appendChild(sec);
+  });
+
+  // Tap-to-reveal dish photos on touch devices.
+  root.querySelectorAll(".item").forEach(function(card){
+    if(card.querySelector(".reveal-img")){
+      card.addEventListener("click", function(){ card.classList.toggle("show-img"); });
+    }
   });
 
   // Menu page view + click tracking (Plausible; no-op if blocked).
